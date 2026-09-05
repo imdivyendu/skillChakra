@@ -18,6 +18,7 @@ const app = express();
 const port = Number(process.env.PORT) || 3000;
 const mongoUri = process.env.MONGODB_URI;
 app.locals.databaseReady = false;
+app.set('trust proxy', 1);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
